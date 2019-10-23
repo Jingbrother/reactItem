@@ -14,6 +14,7 @@ class Login extends React.Component{
                         message.success('登录成功1s后跳转首页',1,()=>{
                             this.props.history.push('/admin/home')
                         })
+                        window.localStorage.setItem('token',data2.token)
                     }else if(data2.err===-2){
                         message.error('用户名和密码不正确，请重新输入')
                     }else{
