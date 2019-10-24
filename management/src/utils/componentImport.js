@@ -3,7 +3,7 @@ import Loadable from 'react-loadable'
 
 const loadingComponent=()=>{
     return(
-        <div>loading</div>
+        <div>loading...</div>
     )
 }
 

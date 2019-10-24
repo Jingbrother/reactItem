@@ -5,11 +5,11 @@ import './index.less'
 
 const routes = [
     {
-      path: '/home',
+      path: '/admin/home',
       breadcrumbName: '首页',
     },
     {
-      path: '/admin/user',
+      path: '/admin/user/',
       breadcrumbName: 'Second-level Menu',
     },
     {
@@ -28,7 +28,6 @@ const routes = [
                     
                 }}
                 breadcrumb={ { routes} }
-                subTitle="qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"
             />   
           )
       }

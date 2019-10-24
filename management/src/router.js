@@ -18,7 +18,7 @@ class Router extends Component{
                         return(
                             <Admin>
                                 <Route path='/admin/home' component={Home}></Route>
-                                <Route path='/admin/user' component={User}></Route>
+                                <Route path='/admin/user/all' component={User}></Route>
                                 <Route path='/admin/movie' component={Movie}></Route>
                             </Admin>
                         )
