@@ -4,10 +4,11 @@ import {HashRouter,Switch,Redirect,Route} from 'react-router-dom'
 const Login = ComponentImport(()=>import('./component/login'))
 const Admin = ComponentImport(()=>import('./component/admin'))
 const Home = ComponentImport(()=>import('./component/home'))
+
 const UserAdd = ComponentImport(()=>import('./component/user/useradd'))
 const MovieAdd = ComponentImport(()=>import('./component/movieAdd'))
 const User = ComponentImport(()=>import('./component/user/index'))
-const Movie = ComponentImport(()=>import('./component/movie'))
+const Movieall = ComponentImport(()=>import('./component/movie/movieall'))
 
 class Router extends Component{
     render(){
@@ -20,10 +21,11 @@ class Router extends Component{
                         return(
                             <Admin>
                                 <Route path='/admin/home' component={Home}></Route>
+
                                 <Route path='/admin/user/all' component={User}></Route>
                                 <Route path='/admin/user/add' component={UserAdd}></Route>
                                 <Route path='/admin/movie/add' component={MovieAdd}></Route>
-                                <Route path='/admin/movie/all' component={Movie}></Route>
+                                <Route path='/admin/movie/all' component={Movieall}></Route>
                             </Admin>
                         )
                     }}></Route>
