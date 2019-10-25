@@ -1,8 +1,18 @@
 import React,{Component} from 'react'
 import CustomNav from '../customNav/index'
 import Header from '../pageHeader/index'
+import actionCreator from '../../store/actionCreator'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
 import './index.less'
 class Admin extends Component{
+    componentDidMount(){
+        if(localStorage.getItem('token')){
+            this.props.changeTokenModal(false)
+        }else{
+            this.props.changeTokenModal(true)
+        }
+    }
     render(){
         return(
             <div className='admin'>
@@ -28,4 +38,7 @@ class Admin extends Component{
         )
     }
 }
-export default Admin
+let mapDispathToprops=(dispatch)=>{
+    return bindActionCreators(actionCreator,dispatch)
+}
+export default connect(state=>state,mapDispathToprops)(Admin)

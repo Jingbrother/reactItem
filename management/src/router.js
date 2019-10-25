@@ -1,6 +1,10 @@
 import React,{Component} from 'react'
 import ComponentImport from './utils/componentImport'
 import {HashRouter,Switch,Redirect,Route} from 'react-router-dom'
+import Token from './component/token'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import ActionCreator from './store/actionCreator'
 const Login = ComponentImport(()=>import('./component/login'))
 const Admin = ComponentImport(()=>import('./component/admin'))
 const Home = ComponentImport(()=>import('./component/home'))
@@ -20,6 +24,7 @@ class Router extends Component{
                                 <Route path='/admin/home' component={Home}></Route>
                                 <Route path='/admin/user/all' component={User}></Route>
                                 <Route path='/admin/movie' component={Movie}></Route>
+                                {this.props.tokenModal?<Token></Token>:''}
                             </Admin>
                         )
                     }}></Route>
@@ -28,5 +33,7 @@ class Router extends Component{
         )
     }
 }
-
-export default Router
+let mapDispathToprops=(dispatch)=>{
+    return bindActionCreators(ActionCreator,dispatch)
+}
+export default connect(state=>state,mapDispathToprops)(Router)
