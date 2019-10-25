@@ -43,7 +43,6 @@ class CustomNav extends Component{
             <div className='customNav'>
                 <Menu  style={{width:255,height:0,color:'#fff'}} mode="vertical">
                     {this.renderItem(navData)}
-
                 </Menu>
             </div>
         )

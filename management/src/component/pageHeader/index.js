@@ -1,20 +1,15 @@
 import React,{Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import { PageHeader } from 'antd'
-import './index.less'
 
 const routes = [
     {
-      path: '/home',
+      path: '/admin/home',
       breadcrumbName: '首页',
     },
     {
-      path: '/admin/user',
-      breadcrumbName: 'Second-level Menu',
-    },
-    {
-        path: 'first',
-        breadcrumbName: 'Second-level Menu',
+      path: '/admin',
+      breadcrumbName: '一级标题',
     },
     
   ];
@@ -23,13 +18,12 @@ const routes = [
       
       render(){
           return(
+            <div className='header'>
            <PageHeader
-                style={{
-                    
-                }}
+                style={{height:70}}
                 breadcrumb={ { routes} }
-                subTitle="qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"
-            />   
+                />   
+            </div>
           )
       }
   }
