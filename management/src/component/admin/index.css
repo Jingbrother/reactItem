@@ -1,0 +1,29 @@
+.admin .admin-nav {
+  width: 255px;
+  height: 100vh;
+  background: #143441;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.admin .admin-nav .logo {
+  height: 70px;
+  background: #8dd4f0;
+  font-size: 26px;
+  text-align: center;
+  line-height: 70px;
+  color: #fff;
+}
+.admin .admin-content {
+  margin-left: 255px;
+}
+.admin .admin-content .admin-content-top {
+  height: 70px;
+  line-height: 70px;
+  border-bottom: 3px solid #ccc;
+}
+.admin .admin-content .admin-content-bottom {
+  text-align: center;
+  color: #cccccc;
+  line-height: 50px;
+}

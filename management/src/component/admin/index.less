@@ -1,9 +1,11 @@
 .admin{
-    display:flex;
     .admin-nav{
         width:255px;
         height:100vh;
         background:rgb(20, 52, 65);
+        position:fixed;
+        top:0;
+        left:0;
         .logo{
             height:70px;
             background:rgb(141, 212, 240);
@@ -14,12 +16,13 @@
         }
     }
     .admin-content{
-        flex:1;
+        margin-left:255px;
         .admin-content-top{
-            height:50px;
-            line-height:50px;
+            height:70px;
+            line-height:70px;
             border-bottom:3px solid #ccc;
         }
+      
         .admin-content-bottom{
             text-align: center;
             color: #cccccc;

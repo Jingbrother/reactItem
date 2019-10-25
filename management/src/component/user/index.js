@@ -1,5 +1,6 @@
 import React from 'react'
 import UserUpdata from '../userupdata'
+import './index.less'
 import {Table,Divider,Button, message,Input} from 'antd';
 class User extends React.Component{
     constructor(){
@@ -118,14 +119,16 @@ class User extends React.Component{
     }
     render(){
         return(
-            <div>
+            <div className='user-box'>
                 {this.state.xianshi?<UserUpdata updata={this.updata1} xxx={this.state.xxx} yyy={this.sxs}></UserUpdata>:''}
                 <Input placeholder="Basic usage" style={{width:'300px',margin:'20px'}} placeholder='请输入用户名' value={this.state.value} onChange={(e)=>{
                     this.state.value=e.target.value
                     this.setState({})
                 }}/>
                 <Button type="dashed" onClick={this.inquire}>查询</Button>
-                <Table columns={this.state.columns} dataSource={this.state.data} pagination={{defaultPageSize:5}}/>
+                <Table columns={this.state.columns} dataSource={this.state.data} pagination={{defaultPageSize:5}}
+                style={{color:'#fff'}}
+                />
             </div>
         )
     }
