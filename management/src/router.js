@@ -5,8 +5,8 @@ const Login = ComponentImport(()=>import('./component/login'))
 const Admin = ComponentImport(()=>import('./component/admin'))
 const Home = ComponentImport(()=>import('./component/home'))
 const User = ComponentImport(()=>import('./component/user'))
-const Movie = ComponentImport(()=>import('./component/movie'))
-
+const Movieadd = ComponentImport(()=>import('./component/movie/movieadd'))
+const Movieall = ComponentImport(()=>import('./component/movie/movieall'))
 class Router extends Component{
     render(){
         return(
@@ -19,7 +19,8 @@ class Router extends Component{
                             <Admin>
                                 <Route path='/admin/home' component={Home}></Route>
                                 <Route path='/admin/user' component={User}></Route>
-                                <Route path='/admin/movie' component={Movie}></Route>
+                                <Route path='/admin/movie/add' component={Movieadd}></Route>
+                                <Route path='/admin/movie/all' component={Movieall}></Route>
                             </Admin>
                         )
                     }}></Route>

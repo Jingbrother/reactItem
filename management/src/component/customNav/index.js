@@ -17,7 +17,14 @@ let navData=[
      path:'/admin/movie',
      children:[
          {name:'电影添加',path:'/admin/movie/add'},
-         {name:'电影查看',path:'/admin/movie/all'},
+         {name:'电影查看',path:'/admin/movie/',
+            children:[{name:'全部',path:'/admin/movie/all'},
+                     {name:'热映中',path:'/admin/movie/showing'},
+                     {name:'已下架',path:'/admin/movie/sold'},
+        ]
+        },
+        
+         
      ]
     }
 ]
