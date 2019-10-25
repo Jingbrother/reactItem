@@ -19,6 +19,9 @@ class Admin extends Component{
                     <div className='admin-content-center'>
                         {this.props.children}
                     </div>
+                    <div className='admin-content-bottom'>
+                        ©版权所有
+                    </div>
                 </div>
 
             </div>
