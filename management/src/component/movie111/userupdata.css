@@ -1,0 +1,26 @@
+.userupdata-box {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+.content {
+  margin: 0 auto;
+  padding: 0 auto;
+  width: 400px;
+  height: auto;
+}
+span {
+  display: block;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.ant-card-bordered {
+  width: 100%;
+  height: 100%;
+}
+.ant-card-body {
+  margin: 0 auto;
+}

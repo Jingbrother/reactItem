@@ -7,10 +7,7 @@ const routes = [
       path: '/admin/home',
       breadcrumbName: '首页',
     },
-    {
-      path: '/admin',
-      breadcrumbName: '一级标题',
-    },
+
     
   ];
   

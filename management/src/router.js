@@ -8,7 +8,7 @@ const Home = ComponentImport(()=>import('./component/home'))
 const UserAdd = ComponentImport(()=>import('./component/user/useradd'))
 const MovieAdd = ComponentImport(()=>import('./component/movieAdd'))
 const User = ComponentImport(()=>import('./component/user/index'))
-const Movieall = ComponentImport(()=>import('./component/movie/movieall'))
+const Movieall = ComponentImport(()=>import('./component/movie111/movieall'))
 
 class Router extends Component{
     render(){

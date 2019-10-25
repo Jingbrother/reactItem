@@ -1,43 +1,44 @@
-import React,{Component} from 'react'
-import './index.less'
-import {Card, message,Button,Select,Input} from 'antd'
+import React,{Component,Lable} from 'react'
+
+import { Input, Col, Row, Select, Button,message,Card,DatePicker} from 'antd';
+import './userupdata.less'
+const InputGroup = Input.Group;
 const { Option } = Select;
-
-function handleChange(value) {
-  console.log(`selected ${value}`);
-}
-
-class MovieAdd extends Component{
-  
-  constructor(){
-    super()
+class Userupdata extends Component{
+  constructor(props){
+    super(props)
     this.state={
-      name:'',
-      showtime:'',
-      state:'',
-      actor:'',
-      price:'',
-      boxOffice:'',
-      grade:'',
-      img:''
+      name:props.data.name,
+      showtime:props.data.showtime,
+      state:props.data.state,
+      actor:props.data.actor,
+      price:props.data.price,
+      boxOffice:props.data.boxOffice,
+      grade:props.data.grade,
+      img:props.data.img,
+      _id:props.data._id,
     }
   }
   
   submit=()=>{
     
-    let {name,showtime,state,actor,price,boxOffice,grade,img} =this.state
-    console.log({name,showtime,state,actor,price,boxOffice,grade,img})
+    let {name,showtime,state,actor,price,boxOffice,grade,img,_id} =this.state
+    console.log({name,showtime,state,actor,price,boxOffice,grade,img,_id})
     if(img !==''){
       // let query={name,showtime,state,actor,price,boxOffice,grade,img}
       let token='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZGFmMDI5MjRhMmQxZjI0YmJiY2EyZWYiLCJ1cyI6IndhbmciLCJpYXQiOjE1NzE3OTMyNDMsImV4cCI6MTU3MjM5ODA0M30.OIVi8bK1-xTIoAwfU0Nhpk33xc0Ni_q_n2dLdEHNkV0'
       // console.log(query)
-      this.$axios.get(`http://39.96.45.250:3000/admin/food/addfood?name=${name}&showtime=${showtime}&state=${state}&actor=${actor}&price=${price}&boxOffice=${boxOffice}&grade=${grade}&token=${token}&img=${img}`)
+      this.$axios.get(`http://39.96.45.250:3000/admin/food/revampFood?_id=${_id}&name=${name}&showtime=${showtime}&state=${state}&actor=${actor}&price=${price}&boxOffice=${boxOffice}&grade=${grade}&token=${token}&img=${img}`)
       .then((data)=>{
+        console.log(data)
         if(data.data.err==0){
-          message.success('添加成功')
+          message.success('修改成功')
           console.log(data)
+          this.props.refresh()
+          this.props.yinchang()
+       
         }else{
-          message.error('添加失败')
+          message.error('修改失败')
           console.log(data)
         }
         
@@ -75,6 +76,7 @@ class MovieAdd extends Component{
         this.state.img=data.data.imgPath
         console.log(data)
         message.success('图片上传成功')
+
       }else{
         console.log(data)
         message.error('图片上传失败')
@@ -84,9 +86,9 @@ class MovieAdd extends Component{
   render(){
     let {name,showtime,state,actor,price,boxOffice,grade,img} =this.state
     return(
-      <div className='movieadd-box'>
+      <div className='userupdata-box'>
         
-        <Card title='电影添加'>
+        <Card title='电影修改'>
         <div className='content'>
           
           <span>电影名:</span>
@@ -96,13 +98,13 @@ class MovieAdd extends Component{
             this.setState({name:e.target.value})
           }
           }></Input>
-          <span>上映时间:</span>
-            
-            <Input type='text' value={this.state.showtime} onChange={
-            (e)=>{
-              this.setState({showtime:e.target.value})
-            }
-            }></Input>
+           <InputGroup compact>
+          <Input style={{ width: '50%' }} defaultValue="上映时间" />
+          <DatePicker style={{ width: '50%' }}  onOk={
+          (e)=>{
+            this.setState({showtime:e.target.value})
+          }}/>
+        </InputGroup>
           <span>演员:</span>
             
             <Input type='text' value={this.state.actor} onChange={
@@ -131,10 +133,6 @@ class MovieAdd extends Component{
               this.setState({grade:e.target.value})
             }
             }></Input>
-          
-          
-          
-          
             
               <span>
                 放映状态&nbsp;
@@ -164,7 +162,4 @@ class MovieAdd extends Component{
     )
   }
 }
-
-
-export default MovieAdd
-
+export default Userupdata
