@@ -13,6 +13,8 @@ const UserAdd = ComponentImport(()=>import('./component/user/useradd'))
 const MovieAdd = ComponentImport(()=>import('./component/movieAdd'))
 const User = ComponentImport(()=>import('./component/user/index'))
 const Movieall = ComponentImport(()=>import('./component/movie111/movieall'))
+const Hot = ComponentImport(()=>import('./component/show'))
+const Soldout = ComponentImport(()=>import('./component/soldout'))
 
 class Router extends Component{
     render(){
@@ -29,6 +31,8 @@ class Router extends Component{
                                 <Route path='/admin/user/add' component={UserAdd}></Route>
                                 <Route path='/admin/movie/add' component={MovieAdd}></Route>
                                 <Route path='/admin/movie/all' component={Movieall}></Route>
+                                <Route path='/admin/movie/show' component={Hot}></Route>
+                                <Route path='/admin/movie/soldout' component={Soldout}></Route>
                                 {this.props.tokenModal?<Token></Token>:''}
                             </Admin>
                         )

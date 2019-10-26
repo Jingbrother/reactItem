@@ -1,13 +1,13 @@
-import React from 'react'
+import React ,{Component} from 'react'
 import { Table, Button,Card,Spin,Popconfirm,Input,message} from 'antd';
-import Updata from './userUpdata'
-import './movieall.less'
-class Movieall extends  React.Component{
+
+
+class Soldout extends Component{
     constructor(){
         super()
          this.data = [
             {
-              key: '1',
+              key: '0',
               name: 'John Brown',
               age: 32,
               address: 'New York No. 1 Lake Park',
@@ -18,7 +18,7 @@ class Movieall extends  React.Component{
     state = {
         filteredInfo: null,
         sortedInfo: null,
-        updata:false,
+    
         updataData:null,
         value:''
       };
@@ -41,44 +41,38 @@ class Movieall extends  React.Component{
       componentDidMount(){
         this.refreshData()
     }
+   
     refreshData=()=>{
-        let token=  window.localStorage.getItem('token')
-        console.log(this)
-        this.$axios.get(`http://39.96.45.250:3000/admin/food/getFoo?token=${token}`,)
-        .then((data)=>{
-            console.log(data.data.data)
-           
-            this.data=data.data.data
-           
-            this.setState({data:data})
-            
-
-          
-           
-        })
-    }
-
+      let token=  window.localStorage.getItem('token')
+      console.log(this)
+      this.$axios.get(`http://39.96.45.250:3000/admin/food/getFoodsByType?token=${token}&state=1`)
+      .then((data)=>{
+          this.data=data.data.list
+          this.setState({}) 
+      })
+  }
+ss(val){
+  for (let i = 0; i < this.data.length; i++) { 
+    if (this.data[i] == val) return i; 
+    } 
+    return -1;
+}
     reset=()=>{
       this.refreshData()
       this.state.value=''
     }
-    del=(data)=>{
-      let token=  window.localStorage.getItem('token')
-      console.log(data)
-      this.$axios.get(`http://39.96.45.250:3000/admin/food/updata?token=${token}&_id=${data}&state='1'`)
-      .then((data)=>{
-        console.log(data)
-        this.refreshData()
+    del=(data,d)=>{
+      this.$axios.get(`http://39.96.45.250:3000/admin/food/delFood?_id=${data}&state=1&token=${window.localStorage.getItem('token')}`)
+      .then((data1)=>{
+        if(data1.data.err===0){
+          let index=this.ss(d)
+          this.data.splice(index,1)
+          this.setState({})
+        }
       })
      
     }
-    Updata=(data)=>{
-      this.setState({updata:true,updataData:data})
-      console.log('修改',data)  
-    }
-    yincang=()=>{
-      this.setState({updata:false})
-    }
+  
     inquire=()=>{
       if(this.state.value==''){
           this.refreshData()
@@ -99,7 +93,7 @@ class Movieall extends  React.Component{
       }
   }
     render(){
-        let { sortedInfo, filteredInfo ,updata,updataData} = this.state;
+        let { sortedInfo, filteredInfo } = this.state;
     sortedInfo = sortedInfo || {};
     filteredInfo = filteredInfo || {};
   
@@ -119,7 +113,7 @@ class Movieall extends  React.Component{
         title: '上映时间',
         dataIndex: 'showtime',
         key: 'showtime',
-       
+    
         sortOrder: sortedInfo.columnKey === 'showtime' && sortedInfo.order,
         ellipsis: true,
       },
@@ -160,7 +154,7 @@ class Movieall extends  React.Component{
         title: '票房',
         dataIndex: 'boxOffice',
         key: 'boxOffice',
-        filters: [{ text: '10-20亿', value:1, }, { text: '20-30亿', value: 2 },{ text: '30-40亿', value: 3 },{ text: '40-50亿', value: 4 }],
+        filters: [{ text: '10-20亿', value:'1亿', }, { text: '20-30亿', value: '2亿' },{ text: '30-40亿', value: 3 },{ text: '40-50亿', value: 4 }],
         filteredValue: filteredInfo.boxOffice || null,
         onFilter: (value, record) => record.boxOffice.includes(value),
         sorter: (a, b) => a.boxOffice - b.boxOffice,
@@ -185,27 +179,22 @@ class Movieall extends  React.Component{
         fixed:'right',
         key:'state',
         render:(a,data,c)=> {
-          
+         
           return(
             <div>
-         
-             {data.state=='0'?   <Popconfirm 
-                  title='你确定要将电影下架吗？'
-                  onConfirm={()=>{
-                    console.log('删除',data,this)
-                    this.del(data._id)
-                    
-                  }}
-                  >
-                <Button size='small' type='danger'>下架</Button>
-                </Popconfirm>:<Button size='small' type='primary'>已下架</Button>}
+              <Popconfirm 
+                title='你确定要要将电影删除吗？'
+                onConfirm={()=>{
+                  this.del(data._id,data)
+                }}
+                >
+              <Button size='small' type='danger'>删除</Button>
+               
+              </Popconfirm>
+           <Button size='small' 
+              >已下架</Button>
               
-           
-              <Button size='small' type='primary' onClick={()=>{
-                  this.Updata(data)
-              }}>修改</Button>
-              
-            </div>     
+            </div>
           )
         },
       },
@@ -218,14 +207,14 @@ class Movieall extends  React.Component{
                 }}/>
                 <Button type="dashed" onClick={this.inquire}>查询</Button>
                 <Button type="dashed" onClick={this.reset}>重置</Button>
-                  {!updata||<Updata data={updataData}  refresh={this.refreshData} yinchang={this.yincang}></Updata>}
+                 
                 <div className="table-operations">
               
                 </div>
-                 <Table columns={columns} dataSource={this.data} onChange={this.handleChange} pagination={{defaultPageSize:6}}/>
+                 <Table columns={columns} dataSource={this.data} onChange={this.handleChange} pagination={{defaultPageSize:6}} />
             </div>
         )
     }
 }
-export default Movieall
+export default Soldout
 
