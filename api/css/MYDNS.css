@@ -1,0 +1,177 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+}
+li{
+    list-style: none;
+}
+.mydns{
+    width: 100%;
+    height: 80px;
+    background: #1696df;
+}
+.mydns div{
+    width: 1000px;
+    height: 100%;
+    line-height: 80px;
+    margin: 0 auto;
+    font-family:"STCaiyun";
+    font-size: 30px;
+}
+.mydns1{
+    width: 1000px;
+    margin: 0 auto;
+    margin-top:30px;
+    
+}
+.mydns1 ul{
+    float: left;
+}
+.mydns1>ul>li>span{
+    width: 200px;
+    height: 50px;
+    background: #ccc;
+    display: block;
+    border-radius: 10px;
+    border:1px solid #333;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    cursor:pointer;
+}
+.mydns1 ol{
+    display: none;
+}
+.mydns1 ol>li{
+    width: 200px;
+    height: 50px;
+    background: #ccc;
+    border-radius: 10px;
+    border:1px solid #333;
+    line-height: 50px;
+    font-size: 15px;
+    padding-left:20px ;
+    cursor:pointer;
+}
+.mydns2{
+    float: left;
+    width: 800px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.mydns2>p:nth-child(1){
+    font-size: 50px;
+    color: aquamarine;
+}
+.mydns3{
+    width: 400px;
+    height: 430px;
+    border:1px dashed rgba(114, 8, 8, 0.562);
+    position: relative;
+}
+.mydns3>div:nth-child(1){
+    font-size: 20px;
+    color: burlywood;
+    text-align: center;
+    line-height: 70px
+}
+.mydns3>input:nth-child(2){
+    width: 290px;
+    height: 40px;
+    padding-left:15px;
+    margin-left:46px; 
+    margin-top:45px;
+}
+.mydns3>input:nth-child(6){
+    width: 290px;
+    height: 40px;
+    padding-left:15px;
+    margin-left:46px; 
+}
+.mydns3>input:nth-child(10){
+    width: 170px;
+    height: 30px;
+    margin-left:46px; 
+}
+.mydns3>button:nth-child(11){
+    height: 30px;
+    margin-left:23px ;
+    background: red;
+}
+.mydns3>button:nth-child(15){
+    width: 170px;
+    height: 40px;
+    margin-left:103px ;
+    background: #1696df;
+}
+.mydns4{
+    width: 100%;
+    height: 100%;
+}
+.mydns4>input{
+    height: 30px;
+    width: 200px;
+    margin-left:70px;
+    margin-top:60px;
+    padding-left: 20px
+}
+.mydns4>button{
+    height: 30px;
+    background: #1696df;
+    width: 60px;
+}
+th,td{
+    width: 120px;
+    height: 40px;
+}
+table{
+    margin-left:40px;
+    margin-top:20px; 
+}
+table span{
+    cursor:pointer;
+    display: inline-block;
+}
+.box{
+    position: absolute;
+    left: 29px;
+    top:425px;
+}
+.mydns5{
+    width: 100%;
+    height: 100%;
+}
+.mydns5 input{
+    margin-left:215px;
+    height: 30px;
+    width: 300px;
+    margin-bottom:10px;
+    padding-left:10px  
+}
+.mydns5>div:nth-child(1){
+    width: 160px;
+    height: 160px;
+    margin-left:277px;
+    background: #ccc;
+    text-align: center;
+    line-height: 160px;
+    cursor:pointer;
+    margin-bottom:50px;
+}
+.mydns5 button{
+    width: 200px;
+    height: 30px;
+    margin-left:277px;
+    background: red;
+}
+td{
+    height: 70px;
+}
