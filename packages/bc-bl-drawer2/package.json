@@ -1,6 +1,6 @@
 {
   "name": "@wjrtest/bc-bl-drawer2",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "test2",
   "scripts": {
     "build": "father-build"
@@ -42,5 +42,5 @@
     "react": ">= 16",
     "styled-components": "^5"
   },
-  "gitHead": "e06648df68e358bf00a6147bf0688f4eb3237131"
+  "gitHead": "fe2038aa49ee023d05e9a50fb60e830281eb325a"
 }

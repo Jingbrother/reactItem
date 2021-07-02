@@ -1,5 +1,5 @@
 {
-  "name": "@wjrtest/business-component",
+  "name": "react-item",
   "private":true,
   "description": "test",
   "workspaces": [
