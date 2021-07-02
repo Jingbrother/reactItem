@@ -1,6 +1,6 @@
 {
   "name": "@wjrtest/bc-bl-drawer2",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "test2",
   "scripts": {
     "build": "father-build"
