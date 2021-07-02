@@ -1,0 +1,58 @@
+{
+  "httpCode": 200,
+  "errorCode": null,
+  "msg": "操作成功！",
+  "data": [{
+    "pid": "169921104bjyq",
+    "hosCode": "-",
+    "empiId": "1098953404",
+    "name": "-",
+    "caseId": "1098****3404",
+    "inpNo": "169921104",
+    "bedNo": "-",
+    "sex": "-",
+    "age": "-",
+    "bedDays": 6,
+    "ryrq": "2021-02-08 12:42:50",
+    "cyrq": "2021-02-13 23:59:59",
+    "ylzfy": 0,
+    "departmentCode": "7103104",
+    "departmentName": "**血透门诊",
+    "medicalGroupCode": "-",
+    "medicalGroupName": "-",
+    "doctorCode": "-",
+    "doctorName": "-",
+    "insuranceNatureCode": "-",
+    "insuranceNatureName": "-",
+    "patientStatus": "-",
+    "caseRange": "1",
+    "drgCode": "IZ25",
+    "drgName": "骨骼、肌肉、肌腱、结缔组织的其他疾患，不伴并发症与合并症",
+    "drgFlag": "-",
+    "zzdFlag": "-",
+    "diagnosisDetail": {
+      "mainDiagnosis": {
+        "diagnosisCode": "D21.900x013",
+        "diagnosisName": "腱鞘良性肿瘤",
+        "diagnosisTypeName": null,
+        "diagnosisTypeCode": "3",
+        "signMain": 1
+      },
+      "secondDiagnosisList": []
+    },
+    "surgeryDetail": {
+      "mainSurgery": {
+        "surgeryCode": "51.2300",
+        "surgeryName": "腹腔镜下胆囊切除术",
+        "groupNo": "1",
+        "daysAfterSurgery": null,
+        "signMain": 1
+      },
+      "secondSurgeryList": []
+    },
+    "lockStatus": 0,
+    "isSubmit": 0
+  }],
+  "notEmpty": true,
+  "empty": false
+}

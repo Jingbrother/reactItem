@@ -1,0 +1,117 @@
+.drawerWrapper {
+  transform: translateX(0) !important;
+
+  :global {
+    .ant-drawer-body {
+      padding: 0px;
+    }
+  }
+}
+
+.zryWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+
+  .zryHeader {
+    flex: 0 0 auto;
+    padding: 15px;
+    border-bottom: 1px solid #e7e7e7;
+
+    > span {
+      &:nth-child(1) {
+        font-weight: bold;
+        font-size: 14px;
+        margin-right: 16px;
+      }
+
+      &:last-child {
+        font-size: 12px;
+        color: #999;
+      }
+    }
+  }
+
+  .zryBody {
+    flex: 1 0 auto;
+    padding: 16px 15px;
+
+    > div {
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+
+      > header {
+        color: #666;
+        margin-bottom: 8px;
+
+        > span {
+          margin-right: 15px;
+        }
+      }
+
+      > main {
+        > header {
+          padding: 10px;
+          background-color: #eff2f5;
+
+          > span {
+            margin-right: 15px;
+
+            > span:nth-child(2) {
+              font-weight: bold;
+            }
+          }
+        }
+
+        > main {
+          border: 1px solid #e7e7e7;
+          border-top: none;
+          padding: 15px;
+
+          > header {
+            font-weight: bold;
+            // color: #e02020;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e7e7e7;
+            position: relative;
+
+            .noDrg {
+              position: absolute;
+              right: 16px;
+              top: -31px;
+            }
+          }
+
+          > main {
+            padding-top: 15px;
+
+            > div {
+              > span:nth-child(1) {
+                font-weight: bold;
+              }
+
+              &:not(:last-child) {
+                margin-bottom: 6px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .zryFooter {
+    flex: 0 0 64px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px;
+    border-top: 1px solid #e7e7e7;
+  }
+
+  .same {
+    color: #e02020;
+  }
+}

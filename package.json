@@ -1,0 +1,50 @@
+{
+  "name": "@wjrtest/business-component",
+  "private":true,
+  "description": "test",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "init": "yarn && yarn run clean && yarn run bootstrap",
+    "start": "dumi dev",
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean --yes",
+    "docs:build": "dumi build",
+    "docs:deploy": "gh-pages -d docs-dist",
+    "build": "lerna run build",
+    "deploy": "yarn run docs:build && yarn run docs:deploy",
+    "release": "yarn run build && yarn run publish",
+    "release:git": "yarn run build && yarn run publish:git",
+    "publish":"lerna publish",
+    "publish:git":"lerna publish --skip-git",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "license": "ISC",
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "devDependencies": {
+    "@firesoon/ant-ui": ">=1.8",
+    "lerna": "^4.0.0",
+    "@firesoon/icons-react": ">=1.5",
+    "@umijs/fabric": "^2.5.7",
+    "@umijs/test": "^3.0.5",
+    "antd": "^3",
+    "babel-plugin-import": "^1.13.3",
+    "dumi": "^1.0.13",
+    "echarts": "^4",
+    "echarts-for-react": "^2",
+    "father-build": "^1.17.2",
+    "gh-pages": "^3.0.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "react": ">= 16",
+    "styled-components": "^5",
+    "umi-request": "^1.3.9",
+    "yorkie": "^2.0.0"
+  }
+}

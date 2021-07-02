@@ -1,0 +1,66 @@
+@import '../../../theme.less';
+
+.drawerWrapper {
+  transform: translateX(0) !important;
+
+  :global {
+    .ant-drawer-body {
+      padding: 0px;
+    }
+  }
+
+  .tables {
+    display: flex;
+
+    .activeRow {
+      background: fade(@theme-color, 10);
+      cursor: pointer;
+    }
+
+    :global {
+      .fs-table-wrapper {
+        width: 50%;
+      }
+    }
+  }
+
+  .iconTips {
+    position: absolute;
+    top: 115px;
+    left: 110px;
+    color: #999;
+  }
+}
+
+.feeWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+
+  .feeHeader {
+    flex: 0 0 auto;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 1px solid #e7e7e7;
+  }
+
+  .feeBody {
+    flex: 1 0 auto;
+    height: calc(100vh - 133px);
+    margin-bottom: 16px;
+    padding: 0px 15px;
+    padding-top: 12px;
+    overflow-y: auto;
+  }
+
+  .feeFooter {
+    display: flex;
+    flex: 0 0 64px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px;
+    border-top: 1px solid #e7e7e7;
+  }
+}

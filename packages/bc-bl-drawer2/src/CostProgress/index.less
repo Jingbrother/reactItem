@@ -1,0 +1,99 @@
+@import '../../../theme.less';
+
+.progressOuter {
+  position: absolute;
+  top: 64px;
+  left: 0px;
+  width: 100%;
+  height: 16px;
+  background-color: #cecdcd;
+  border-radius: 9px;
+}
+
+.progressBody {
+  position: absolute;
+  top: 64px;
+  left: 0px;
+  z-index: 99;
+  height: 16px;
+  border-radius: 9px 9px 9px 9px;
+}
+
+.progressTooltip {
+  position: absolute;
+  top: 64px;
+  width: 0px;
+  height: 16px;
+}
+
+.progressTooltipWrapper {
+  z-index: 100;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.progressWrapper {
+  position: relative;
+  width: 100%;
+  height: 148px;
+
+  :global {
+    .ant-tooltip-placement-topLeft {
+      .ant-tooltip-arrow {
+        left: 3px;
+      }
+    }
+
+    .ant-tooltip-placement-topRight {
+      .ant-tooltip-arrow {
+        right: 3px;
+      }
+    }
+  }
+}
+
+.progressDashed {
+  position: absolute;
+  top: 64px;
+  z-index: 100;
+  box-sizing: border-box;
+  width: 1px;
+  height: 22px;
+  border-left: 1px dashed #666;
+}
+
+.progressLabel {
+  position: absolute;
+  top: 90px;
+  z-index: 101;
+  height: 20px;
+  padding: 0px 7px;
+  line-height: 20px;
+  white-space: nowrap;
+  background-color: rgba(51, 103, 214, 0.1);
+  border-radius: 18px;
+  transform: translateX(-50%);
+}
+
+.progressNormal {
+  position: absolute;
+  top: 64px;
+  z-index: 100;
+  height: 16px;
+  color: white;
+  line-height: 16px;
+  text-align: center;
+  background-color: transparent;
+}
+
+.avgDashed {
+  border-left-color: @theme-color;
+}
+
+.avgSecDashed {
+  height: 52px;
+}
+
+.avgSecLabel {
+  top: 118px;
+}

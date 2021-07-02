@@ -1,0 +1,110 @@
+@import '../../../theme.less';
+
+.card {
+  margin-bottom: 16px;
+
+  h3,
+  p {
+    margin-bottom: 0px;
+  }
+
+  .header,
+  .body {
+    background-color: #eff2f5;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1px;
+    padding: 13px 16px 10px 13px;
+
+    > h3 {
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+
+  .body {
+    padding: 23px 16px 18px;
+
+    .group {
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+
+    .overview {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      > div > p {
+        &:first-child {
+          margin-bottom: 4px;
+          color: #666;
+        }
+
+        &:last-child {
+          font-weight: 700;
+        }
+      }
+    }
+
+    .details {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 16px;
+
+      > div {
+        flex: 1 1 50%;
+        padding: 14px 12px;
+        background-color: #fff;
+
+        > header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 20px;
+          font-weight: 700;
+        }
+
+        > main {
+          > div,
+          .groupPoint {
+            display: flex;
+
+            &:not(:last-child) {
+              margin-bottom: 7px;
+            }
+
+            > label {
+              display: block;
+              font-weight: 700;
+              white-space: nowrap;
+            }
+          }
+
+          .groupPoint {
+            justify-content: space-between;
+
+            label {
+              font-weight: 700;
+            }
+          }
+        }
+      }
+
+      .mockCard {
+        background: fade(@theme-color, 10);
+      }
+
+      .detailBodyCodeLabel {
+        padding: 4px 12px;
+        color: #666;
+        background: fade(#000, 13);
+        border-radius: 14px;
+      }
+    }
+  }
+}

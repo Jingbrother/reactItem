@@ -1,0 +1,46 @@
+{
+  "name": "@wjrtest/bc-bl-drawer2",
+  "version": "1.0.12",
+  "description": "test2",
+  "scripts": {
+    "build": "father-build"
+  },
+  "license": "ISC",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.8.7",
+    "ahooks": "^2.10.2",
+    "classname": "0.0.0",
+    "crypto-js": "^4.0.0",
+    "lodash": "^4.17.21"
+  },
+  "peerDependencies": {
+    "@firesoon/ant-ui": ">=1.8",
+    "@firesoon/icons-react": ">=1.5",
+    "antd": "^3",
+    "echarts": "^4",
+    "echarts-for-react": "^2",
+    "react": ">= 16",
+    "styled-components": "^5"
+  },
+  "gitHead": "e06648df68e358bf00a6147bf0688f4eb3237131"
+}
